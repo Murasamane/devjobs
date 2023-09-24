@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5964e0;
+  background-image: url("../../../public/assets/desktop/bg-pattern-header.svg");
+  background-position: center;
+  padding: 4.4rem 21.4rem;
+  border-radius: 0px 0px 0px 10rem;
+}
+
+.header button {
+  border: none;
+  background: none;
+  color: #fff;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  align-items: center;
+  justify-items: center;
+  margin-top: 10rem;
+  row-gap: 3rem;
+  padding: 3rem;
+}
