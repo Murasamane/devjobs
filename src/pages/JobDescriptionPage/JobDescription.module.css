@@ -1,0 +1,190 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+.imageContainer img {
+  width: 100%;
+}
+.jobContainer {
+  width: 73rem;
+  max-width: 100%;
+  height: 14rem;
+  margin: auto;
+  margin-top: -4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.companyLink {
+  justify-self: flex-end;
+  border-radius: 5px;
+  background: rgba(89, 100, 224, 0.115);
+  padding: 1.6rem 2.1rem 1.6rem 2rem;
+}
+
+.companyLink a:link,
+.companyLink a:visited {
+  color: rgb(89, 100, 224, 1);
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  opacity: 1;
+}
+.headerFlexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.4rem;
+}
+
+.descriptions h2 {
+  color: #19202d;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 1.3rem;
+}
+.descriptions p {
+  color: #6e8098;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.jobApply {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main {
+  padding: 4.8rem;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+.categories span {
+  color: #6e8098;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.titlesContainer h2 {
+  margin-bottom: 1.3rem;
+  color: #19202d;
+
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.titlesContainer p {
+  color: #5964e0;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.applyBtn {
+  border-radius: 5px;
+  background: #5964e0;
+  padding: 1.6rem 2.7rem;
+  color: #fff;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+}
+
+.JobDescription {
+  margin-top: 4.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+.jobParagraph {
+  color: #6e8098;
+  font-family: Kumbh Sans;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+.requirements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.requirements h3 {
+  color: #19202d;
+
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.requirements p {
+  color: #6e8098;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  line-height: 26px; /* 162.5% */
+}
+
+.requirements ul,
+.requirements ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 1.2rem;
+}
+
+.requirements ul li,
+.requirements ol li {
+  color: #6e8098;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+
+}

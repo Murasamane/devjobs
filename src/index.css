@@ -8,6 +8,10 @@
 html {
   font-size: 62.5%;
 }
-body{
-  background-color: #F4F6F8;
+body {
+  background-color: #f4f6f8;
+}
+
+a {
+  text-decoration: none;
 }

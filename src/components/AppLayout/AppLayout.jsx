@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import SearchAndFilter from "../SearchAndFilter/SearchAndFilter";
 import styles from "./AppLayout.module.css";
-import data from '../../../data/data.json'
-import JobCard from "../JobCard/JobCard";
-function AppLayout({ children }) {
+import { Outlet } from "react-router-dom";
+function AppLayout() {
   return (
     <div className={styles.mainContainer}>
       <header className={styles.header}>
@@ -24,10 +22,7 @@ function AppLayout({ children }) {
         </svg>
         <button>Dark Mode</button>
       </header>
-      <SearchAndFilter />
-      <main className={styles.main}>
-        {data.map(job=><JobCard key={job.id} job={job}/>)}
-      </main>
+      <Outlet />
     </div>
   );
 }

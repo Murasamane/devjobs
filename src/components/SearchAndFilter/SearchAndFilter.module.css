@@ -26,6 +26,9 @@
   padding: 1.6rem 3.5rem;
   cursor: pointer;
 }
+.form button:hover{
+  background-color: #939BF4;
+}
 .search input,
 .filter input {
   width: 30.1rem;
@@ -67,4 +70,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.form input:focus{
+  outline: none;
 }
