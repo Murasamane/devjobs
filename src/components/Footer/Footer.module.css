@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 3rem;
+}
+
+.container h2 {
+  color: #19202d;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.container p {
+  color: #6e8098;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer button {
+  border-radius: 5px;
+  background: #5964e0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1.8rem 2.7rem;
+  border: none;
+}
+
+.darkFooter {
+  background: #19202d;
+}
+
+.darkFooter h2 {
+color: #fff;
+}

@@ -1,0 +1,30 @@
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.toggleBtn {
+  position: relative;
+  width: 5.5rem;
+  height: 2.4rem;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.toggleBtn:before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 5px;
+  background: #5964e0;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggleBtn.dark:before {
+  transform: translateX(20px);
+}

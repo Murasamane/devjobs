@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import styles from "./AppLayout.module.css";
 import { Outlet } from "react-router-dom";
+import Modes from "../Modes/Modes";
 function AppLayout() {
   return (
     <div className={styles.mainContainer}>
@@ -20,7 +21,7 @@ function AppLayout() {
             fill="white"
           />
         </svg>
-        <button>Dark Mode</button>
+        <Modes />
       </header>
       <Outlet />
     </div>

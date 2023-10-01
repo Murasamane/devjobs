@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import styles from "./JobCard.module.css";
+import { useJobs } from "../Contexts/JobsContext";
 
 function JobCard({ job }) {
   const {
@@ -14,9 +15,11 @@ function JobCard({ job }) {
     location,
     logoBackground,
   } = job;
+
+  const { isDark } = useJobs();
   return (
     <Link to={`/${id}`}>
-      <div className={styles.cardContainer}>
+      <div className={`${styles.cardContainer} ${isDark ? styles.dark : ""}`}>
         <div className={styles.imageContainer}>
           <img
             src={logo}

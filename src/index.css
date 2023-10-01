@@ -1,3 +1,13 @@
+:root {
+  --body-primary--: #f4f6f8;
+  --card-primary: #fff;
+  --card-text-primary: #19202d;
+  --card-category: #6e8098;
+  --location-primary: #5964e0;
+  --filter-primary: #fff;
+  --body-secondary: #121721;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +19,13 @@ html {
   font-size: 62.5%;
 }
 body {
-  background-color: #f4f6f8;
+  background-color: var(--body-primary--);
 }
 
 a {
   text-decoration: none;
+}
+
+.darkMode {
+  background: var(--body-secondary);
 }

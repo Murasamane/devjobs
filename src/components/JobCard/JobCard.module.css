@@ -34,11 +34,11 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color:#6E8098
+  color: #6e8098;
 }
 .categories span {
   font-size: 1.6rem;
-  color:#6E8098
+  color: #6e8098;
 }
 .description {
   display: flex;
@@ -68,4 +68,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.cardContainer.dark {
+  background-color: #19202d;
+}
+.cardContainer.dark h2{
+  color: #fff;
 }

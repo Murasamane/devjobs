@@ -1,8 +1,24 @@
+import { useState } from "react";
 import styles from "./SearchAndFilter.module.css";
+import { useJobs } from "../Contexts/JobsContext";
 
 function SearchAndFilter() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchLocation, setSearchLocation] = useState("");
+  const [searchFullTime, setSearchFullTime] = useState(false);
+  const { isDark } = useJobs();
   return (
-    <form className={styles.form}>
+    <form
+      className={`${styles.form} ${isDark ? styles.dark : ""}`}
+      onSubmit={(e) => {
+        e.preventDefault();
+        console.log({
+          searchQuery,
+          searchLocation,
+          searchFullTime,
+        });
+      }}
+    >
       <div className={styles.search}>
         <label htmlFor="search">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -18,6 +34,8 @@ function SearchAndFilter() {
           id="search"
           name="search"
           placeholder="Filter by title, companies, expertise…"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
       <div className={styles.sideLine}></div>
@@ -36,11 +54,18 @@ function SearchAndFilter() {
           id="filter"
           name="filter"
           placeholder="Filter by location…"
+          value={searchLocation}
+          onChange={(e) => setSearchLocation(e.target.value)}
         />
       </div>
       <div className={styles.sideLine}></div>
       <div className={styles.fullTime}>
-        <input type="checkbox" id="fullTime" name="fullTime" />
+        <input
+          type="checkbox"
+          id="fullTime"
+          name="fullTime"
+          onChange={() => setSearchFullTime((prevState) => !prevState)}
+        />
         <label htmlFor="fullTime">Full Time only</label>
       </div>
       <button>Search</button>

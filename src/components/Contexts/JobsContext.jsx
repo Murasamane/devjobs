@@ -1,5 +1,12 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+} from "react";
 
 const JobsContext = createContext();
 
@@ -9,6 +16,7 @@ const initialState = {
   status: "loading",
   jobs: [],
   currentJob: {},
+  isDark: false,
 };
 
 function reducer(state, action) {
@@ -26,10 +34,23 @@ function reducer(state, action) {
         status: "ready",
         jobs: action.payload,
       };
+    case "currentJob/loading":
+      return {
+        ...state,
+        currentJob: {},
+        isLoading: true,
+      };
     case "currentJob":
       return {
         ...state,
+        isLoading: false,
         currentJob: action.payload,
+      };
+
+    case "darkMode":
+      return {
+        ...state,
+        isDark: !state.isDark,
       };
     default:
       throw new Error("Unknown Action Type");
@@ -37,10 +58,8 @@ function reducer(state, action) {
 }
 
 function JobsContextProvider({ children }) {
-  const [{ isLoading, status, jobs }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ isLoading, status, jobs, currentJob, isDark }, dispatch] =
+    useReducer(reducer, initialState);
 
   useEffect(() => {
     async function getJobs() {
@@ -57,14 +76,19 @@ function JobsContextProvider({ children }) {
     getJobs();
   }, []);
 
-  async function getCurrentJob(id,setCity) {
+  const getCurrentJob = useCallback(async function getCurrentJob(id) {
+    dispatch({ type: "currentJob/loading" });
     try {
       const res = await fetch(`http://localhost:3000/jobs/${id}`);
       const data = await res.json();
-      setCity(data)
+      dispatch({ type: "currentJob", payload: data });
     } catch (err) {
       console.log(err.message);
     }
+  }, []);
+
+  function toggleMode() {
+    dispatch({ type: "darkMode" });
   }
   return (
     <JobsContext.Provider
@@ -72,8 +96,11 @@ function JobsContextProvider({ children }) {
         isLoading,
         status,
         jobs,
+        currentJob,
         dispatch,
         getCurrentJob,
+        toggleMode,
+        isDark,
       }}
     >
       {children}
