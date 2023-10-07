@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { useJobs } from "../../components/Contexts/JobsContext";
-import JobsList from "../../components/JobsList/JobsList";
-import Loader from "../../components/Loader/Loader";
 import SearchAndFilter from "../../components/SearchAndFilter/SearchAndFilter";
+import SearchedList from "../../components/SearchedList/SearchedList";
 import SearchModal from "../../components/SearchModal/SearchModal";
-function HomePage() {
-  const { isLoading } = useJobs();
+
+function SearchedPage() {
   const [windowWidth, setWindowWidth] = useState(() => window.innerWidth);
 
   useEffect(() => {
@@ -22,9 +20,9 @@ function HomePage() {
   return (
     <>
       {windowWidth <= 965 ? <SearchModal /> : <SearchAndFilter />}
-      {!isLoading ? <JobsList /> : <Loader />}
+      <SearchedList />
     </>
   );
 }
 
-export default HomePage;
+export default SearchedPage;

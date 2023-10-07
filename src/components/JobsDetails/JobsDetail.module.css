@@ -19,7 +19,6 @@
   width: 100%;
 }
 .jobContainer {
-  height: 14rem;
   margin: auto;
   margin-top: -4rem;
   display: flex;
@@ -195,4 +194,10 @@
 
 .jobContainer.dark main {
   background-color: #19202D;
+}
+
+@media(max-width:660px){
+  .jobContainer{
+    padding: 1.2rem;
+  }
 }

@@ -88,3 +88,20 @@
 .form.dark input {
   color: #fff;
 }
+
+@media(max-width:1070px){
+  .form{
+    width: 100%;
+  }
+}
+
+
+@media(max-width:960px){
+  .sideLine{
+    display: none;
+  }
+  .form{
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}

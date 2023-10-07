@@ -1,18 +1,21 @@
-import { useState } from "react";
-import styles from "./SearchAndFilter.module.css";
-import { useJobs } from "../Contexts/JobsContext";
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
-
-function SearchAndFilter() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchLocation, setSearchLocation] = useState("");
-  const [searchFullTime, setSearchFullTime] = useState(false);
-  const { isDark, dispatch } = useJobs();
+import styles from "./Modal.module.css";
+import { createPortal } from "react-dom";
+import { useJobs } from "../Contexts/JobsContext";
+function Modal({
+  setSearchFullTime,
+  setSearchLocation,
+  searchLocation,
+  dispatch,
+  searchQuery,
+  searchFullTime,
+}) {
   const navigate = useNavigate();
-
-  return (
+  const { isDark } = useJobs();
+  return createPortal(
     <form
-      className={`${styles.form} ${isDark ? styles.dark : ""}`}
+      className={`${styles.container} ${isDark ? styles.dark : ""}`}
       onSubmit={(e) => {
         e.preventDefault();
         if (
@@ -33,26 +36,6 @@ function SearchAndFilter() {
         return;
       }}
     >
-      <div className={styles.search}>
-        <label htmlFor="search">
-          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z"
-              fill="#5964E0"
-              fillRule="nonzero"
-            />
-          </svg>
-        </label>
-        <input
-          type="text"
-          id="search"
-          name="search"
-          placeholder="Filter by title, companies, expertise…"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
-      <div className={styles.sideLine}></div>
       <div className={styles.filter}>
         <label htmlFor="filter">
           <svg width="17" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +55,6 @@ function SearchAndFilter() {
           onChange={(e) => setSearchLocation(e.target.value)}
         />
       </div>
-      <div className={styles.sideLine}></div>
       <div className={styles.fullTime}>
         <input
           type="checkbox"
@@ -83,8 +65,9 @@ function SearchAndFilter() {
         <label htmlFor="fullTime">Full Time only</label>
       </div>
       <button>Search</button>
-    </form>
+    </form>,
+    document.getElementById("portal-root")
   );
 }
 
-export default SearchAndFilter;
+export default Modal;

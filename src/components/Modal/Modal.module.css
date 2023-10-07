@@ -1,0 +1,67 @@
+.filter,
+.fullTime {
+  padding: 2rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 16rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 40rem;
+  padding: 2.4rem;
+}
+.container button {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 5px;
+  background: #5964e0;
+  border: none;
+  padding: 1.6rem 3.5rem;
+  cursor: pointer;
+}
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filter input {
+  padding: 1.6rem;
+  border: none;
+  background-color: transparent;
+}
+
+.fullTime {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.fullTime label {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.fullTime input[type="checkbox"] {
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #999;
+  border: none;
+}
+
+.container input:focus {
+  outline: none;
+}
+
+.container.dark {
+  background-color: #19202d;
+}
+
+.container.dark label {
+  color: #fff;
+}
+.container.dark input {
+  color: #fff;
+}

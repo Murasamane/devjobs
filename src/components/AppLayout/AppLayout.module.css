@@ -15,3 +15,14 @@
   color: #fff;
 }
 
+@media (max-width: 900px) {
+  .header {
+    padding: 4.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    border-radius: 0;
+  }
+}

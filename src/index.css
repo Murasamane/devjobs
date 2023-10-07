@@ -20,6 +20,7 @@ html {
 }
 body {
   background-color: var(--body-primary--);
+  position: relative;
 }
 
 a {
@@ -28,4 +29,18 @@ a {
 
 .darkMode {
   background: var(--body-secondary);
+}
+
+
+@media(max-width:1060px){
+  html{
+    font-size: 55.2%;
+  }
+}
+
+
+@media(max-width:840px){
+  html{
+    font-size: 50%;
+  }
 }
